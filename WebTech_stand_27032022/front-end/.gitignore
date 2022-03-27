@@ -1,0 +1,46 @@
+# http://help.github.com/ignore-files/
+
+# kompilierte Ausgabe
+/dist
+/tmp
+/out-tsc
+# exisiteirt nur, wennBazel ausgeführt wird
+/bazel-out
+
+# Abhängigkeiten
+/node_modules
+
+# profiler Daten
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs und editoren
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Datei
+.DS_Store
+Thumbs.db

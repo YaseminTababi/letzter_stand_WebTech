@@ -1,0 +1,211 @@
+<!--https://stackoverflow.com/questions/46705101/mat-form-field-must-contain-a-matformfieldcontrol-->
+<!--https://angularquestions.com/2021/11/18/show-hidden-mat-option-when-all-the-others-are-filtered-out/-->
+<!--https://www.youtube.com/watch?v=RFbPLKUhpqE-->
+<!--https://stackoverflow.com/questions/53557690/angular-formcontrol-check-if-required-->
+<!--https://www.youtube.com/watch?v=s9fAysnpiZ0-->
+<!--https://material.angular.io/components/datepicker/overview-->
+<!--https://www.youtube.com/watch?v=l7iDFzW0jl0-->
+<!--https://stackoverflow.com/questions/61607863/components-interaction-2-way-angular-->
+<!--https://www.youtube.com/watch?v=PZvRmh8jxcw-->
+<!--https://www.youtube.com/watch?v=vCreejGIlbo-->
+
+<div class="col-xl-8 container">
+    <div class="card mb-4">
+        <div class="card-header">{{buttonText}}</div>
+        <div class="card-body">
+            <form [formGroup]="studentCreate" autocomplete="off">
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Vorname des Studenten</mat-label>
+                            <input matInput type="text" name="studenten_vorname" formControlName="studenten_vorname" required
+                                [(ngModel)]="studentenVorname" placeholder="Vorname des Studenten"> 
+                        </mat-form-field>
+                        <!--required für alle (pflichtfelder)-->
+
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Nachname des Studenten</mat-label>
+                            <input matInput type="text" name="studenten_nachname" [(ngModel)]="studentenNachname"
+                                formControlName="studenten_nachname" required placeholder="Nachname des Studenten">
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>E-Mail Adresse</mat-label> <!--das steht dann oben in rot-->
+                            <input matInput type="email" name="email" [(ngModel)]="email" formControlName="email"
+                                required placeholder="E-Mail eingeben"> <!-- das wird in grau angezeigt-->
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Fachbereich</mat-label>
+                            <mat-select name="fachbereich_v" placeholder="Fachbereich" [(ngModel)]="fachBereich"
+                                formControlName="fachbereich_v" required>
+                                <mat-option *ngFor="let fachbereich_v of fachbereiche" [value]="fachbereich_v"
+                                    (change)="selectCourse($event.value);"> <!--Fachbereich auswählen-->
+                                    {{fachbereich_v}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Thema eingeben</mat-label>
+                            <input matInput type="text" name="thema" formControlName="thema" [(ngModel)]="thema"
+                                required placeholder="Thema eingeben">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Adresse eingeben</mat-label>
+                            <input matInput type="text" name="adresse" [(ngModel)]="adresse" formControlName="adresse"
+                                required placeholder="Adresse eingeben">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>
+                                Telefonnummer eingeben</mat-label>
+                            <input matInput type="tel" name="telefonnummer_v" formControlName="telefonnummer_v" [(ngModel)]="telefonnummer_v" required
+                                placeholder="Telefonnummer eingeben">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Postleitzahl eingeben</mat-label>
+                            <input matInput type="number" name="postleitzahl_v" [(ngModel)]="postleitZahl"
+                                formControlName="postleitzahl_v" required placeholder="Postleitzahl eingeben">
+                        </mat-form-field>
+                        <!--type number macht die pfeile nach oben und unten-->
+                    </div>
+                </div>
+
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Geburtsort</mat-label>
+                            <input matInput type="text" name="geburtsort" [(ngModel)]="geburtsort"
+                                formControlName="geburtsort" required placeholder="Geburtsort">
+                        </mat-form-field>
+                    </div>
+                    <!--Praktikum beendet am ist auch so aufgebaut (DatePicker für Kalender)-->
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>Geburtsdatum</mat-label>
+                            <input matInput [matDatepicker]="picker" name="geburtsdatum" [(ngModel)]="geburtsdatum" formControlName="geburtsdatum"
+                                placeholder="Geburtsdatum" required>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> <!--Kalender-->
+                            <mat-datepicker #picker></mat-datepicker> <!--icon-->
+                        </mat-form-field>
+
+                    </div>
+                </div>
+
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <mat-label><b>Abschluss für:</b></mat-label>
+                        <br>
+                        <mat-radio-group name="abschluss_v" formControlName="abschluss_v" [(ngModel)]="abschluss_v" required>
+                            <mat-radio-button value="Bachelor" (change)="onRadioChange($event.value,'abschluss')"> 
+                                Bachelor
+                            </mat-radio-button> &nbsp;&nbsp;
+                            <mat-radio-button value="Master" (change)="onRadioChange($event.value,'abschluss')">Master
+                            </mat-radio-button>
+                        </mat-radio-group>
+                        <!--Radio Button, da nur eine Auswahl gewählt werden darf, geschütztes Leerzeichen-->
+                    </div>
+                    <div class="col-md-6">
+
+                        <mat-label><b>Semester</b></mat-label>
+                        <br>
+                        <mat-radio-group name="semesters" formControlName="semesters" [(ngModel)]="semesters" required>
+                            <mat-radio-button value="Sommer" (change)="onRadioChange($event.value,'semester')">Sommer
+                            </mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="Winter" (change)="onRadioChange($event.value,'semester')">Winter
+                            </mat-radio-button>
+                        </mat-radio-group>
+
+                    </div>
+                </div>
+
+                <div class="row gx-3 mb-3">
+                   
+                    <div class="col-md-6">
+                        <mat-label><b>Fachpraktikum absolviert?</b></mat-label>
+                        <br>
+                        <mat-radio-group name="praktikum" formControlName="praktikum" [(ngModel)]="praktikum"
+                            required>
+                            <mat-radio-button [value]="true" (change)="onRadioChange($event.value,'intern')">Ja
+                            </mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button [value]="false" (change)="onRadioChange($event.value,'intern')">Nein 
+                            </mat-radio-button>
+                        </mat-radio-group>
+
+                    </div>
+                    <!-- Geburtsag ist auch so aufgebaut-->
+                    <div class="col-md-6" *ngIf="praktikum">
+                        <!-- if else Funktion. NgModel checkt ob true or false  -->
+                        <!--if true dann kommt dieser Code ins Spiel-->
+                        <mat-form-field>
+                            <mat-label>Fachpraktikum beendet am:</mat-label> 
+                            <input matInput [matDatepicker]="picker" name="praktikum_ende" [(ngModel)]="praktikum_ende"
+                                formControlName="praktikum_ende" required> <!--Required sind die Pflichtfelder(stern)-->
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> <!--Date picker ist der Kalender-->
+                            <mat-datepicker #picker></mat-datepicker> <!--das ost Kalender icon-->
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+                <div class="row gx-3 mb-3">
+                    <div class="col-md-6">
+                        <mat-label><b>1. Betreuende Prüfer/Prüferin</b></mat-label>
+                        <br>
+                        <mat-form-field>
+                            <mat-select name="sp1" placeholder="1. Betreuende Prüfer/Prüferin" formControlName="betreuer1"
+                                [(ngModel)]="profName1" (selectionChange)="selectSp1($event.value)" required>
+                                <mat-option *ngFor="let sp of betreuer1" [value]="sp">{{sp.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-md-6">
+                        <mat-label><b>2. Betreuende Prüfer/Prüferin aus der HTW?</b></mat-label><br>
+                        <mat-radio-group name="betreuer_2" formControlName="betreuer_2abfrage" [(ngModel)]="betreuer_2"
+                            required>
+                            <mat-radio-button [value]="true" (change)="onRadioChange($event.value,'betreuer_2')">
+                                Ja
+                            </mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button [value]="false" (change)="onRadioChange($event.value,'betreuer_2')">
+                                Nein
+                            </mat-radio-button>
+                        </mat-radio-group>&nbsp;&nbsp;
+                        <mat-form-field *ngIf="betreuer_2">
+                            <mat-select name="sp2" placeholder="2. Betreuende Prüfer/Prüferin aus der HTW?" formControlName="betreuer2"
+                                [(ngModel)]="profName2" (selectionChange)="selectSp2($event.value)">
+                                <mat-option *ngFor="let sp of betreuer2" [value]="sp">{{sp.name}} &nbsp;({{sp.type}})
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!--Button um Update von Studenten zu speicehern-->
+                <button class="btn btn-danger" type="button" (click)="cancel()" *ngIf="updateStudent">Beenden</button>
+                &nbsp;&nbsp;&nbsp;  <!--geschütztes Leerzeichen-->
+                <button class="btn btn-primary" type="submit"
+                    (click)="createStudent(studentCreate.value)">{{buttonText}}</button>
+                <!--Daten werden gespeichert mit dem Button-->
+
+            </form>
+        </div>
+    </div>
+</div>

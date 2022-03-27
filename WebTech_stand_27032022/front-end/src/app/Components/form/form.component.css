@@ -1,0 +1,12 @@
+.card-header {
+    padding: 1rem 1.35rem;
+    margin-bottom: 0;
+    background-color: #dbebbd; /* HTW grün 30%) */
+    border-bottom: 2px solid #76B900; /*HTW grün 100% untereLinie*/
+}
+
+.container {
+    margin-top: 20px; /* Abstand zwischen Header und Container */
+    margin-right: auto;
+    margin-left: auto;
+}

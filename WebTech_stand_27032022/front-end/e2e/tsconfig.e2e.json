@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "module": "commonjs",
+    "target": "es5",
+    "types": [
+      "jasmine",
+      "jasminewd2",
+      "node"
+    ]
+  }
+}
+
+// https://www.uni-hildesheim.de/gitlab/celikm/angular-calendar/blob/46198afa6ab4d2979c3e678a1c940060db666f44/e2e/tsconfig.e2e.json

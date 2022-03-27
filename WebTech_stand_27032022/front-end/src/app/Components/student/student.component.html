@@ -1,0 +1,102 @@
+<!-- <span class="close" (click)="onNoClick()"><i class="material-icons">clear</i></span> -->
+<h3 mat-dialog-title style="font-weight: 600;">Studenten Übersicht</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list">
+                        <tr>
+                            <th><span>Vorname des Studenten</span></th>
+                            <td>{{student.vorname}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Nachname des Studenten</span></th>
+                            <td>{{student.nachname}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>E-Mail Adresse</span></th>
+                            <td>{{student.email}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Abschlussarbeit für:</span></th>
+                            <td>{{student.abschluss}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Fachbereich</span></th>
+                            <td>{{student.fachbereich}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Thema</span></th>
+                            <td>{{student.thema}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Geburtsdatum</span></th>
+                            <td>{{student.geburtsdatum}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Telefonnummer</span></th>
+                            <td>{{student.telefonnummer}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Adresse</span></th>
+                            <td>{{student.adresse}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Geburtsort</span></th>
+                            <td>{{student.geburtsort}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Postleitzahl</span></th>
+                            <td>{{student.postleitzahl}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Semester</span></th>
+                            <td>{{student.semester}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>Fachpraktikum absolviert?</span></th>
+                            <td *ngIf="student.praktikum">Ja</td>
+                            <td *ngIf="!student.praktikum">Nein</td>
+                        </tr>
+                        <tr *ngIf="student.praktikum">
+                            <th><span>Fachpraktikum beendet am:</span></th>
+                            <td>{{student.praktikum_ende}}</td>
+                        </tr>
+                        <tr>
+                            <th><span>1. Betreuende Prüfer/Prüferin</span></th>
+                            <td>
+                                <ul>
+                                    <li>{{student.betreuer_1.name}}</li>
+                                    <li>{{student.betreuer_1.email}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span>2. Betreuende Prüfer/Prüferin</span></th>
+                            <td>
+                                <ul *ngIf="student.betreuer_2db">
+                                    <li>{{student.betreuer_2.name}}</li>
+                                    <li>{{student.betreuer_2.email}}</li>
+                                    <li>{{student.betreuer_2.type}}</li>
+                                </ul>
+                                <ng-container *ngIf="!student.betreuer_2db">
+                                    Keine Betreuende Prüfer/Prüferin
+                                </ng-container>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-danger" type="button" mat-dialog-close>Schließen</button>
+<!-- mat-dialog-close
+<div class="modal-actions" FxFlex fxLayoutGap="10px" fxLayoutAlign="end center">
+    <button mat-raised-button color="accent" >Cancel</button>
+</div> -->
