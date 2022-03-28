@@ -32,6 +32,7 @@ READ: Klickt man auf die Lupe, so öffnet sich ein Fenster mit dem Eintrag. Hier
 UPDATE: Nun kann es ja mal vor kommen, dass einige Daten falsch sind oder sich geändert haben. 
 Aber das bearbeiten der Daten ist mit Hilfe des Bearbeitungsbuttons kein Problem. 
 Einfach auf den Stift Symbol klicken und die Daten überarbeiten und dann updaten. 
+<img width="1035" alt="Bildschirmfoto 2022-03-28 um 22 29 29" src="https://user-images.githubusercontent.com/102029357/160481770-6f130e12-6726-46ff-ae70-6fb0116bf359.png">
 
 DELETE: Ein student hat sich entschieden, doch nicht seine Abschlussarbeit zu schreiben. 
 Da wäre es sicherlich gut, den Studenten aus der Liste zu löschen. Dafür ist der Button mit dem Mülleimer Button geeignet. 
@@ -42,7 +43,8 @@ habe ich mich für MongoCompas entschieden. Das Programm bietet die Möglichkeit
 mit den jeweiligen variablen, Visualisieren. Dies erleichterte mir die Fehlerfindung. Somit konnte ich eingrenzen, 
 ob der Fehler in der Datenbak war oder im Frontend.
 
-Das Programm Mongo Compass kann unter: https://www.mongodb.com/products/compass?_ga=2.242098183.484665306.1647521336-1145371503.1646484763 
+Das Programm Mongo Compass kann unter:
+https://www.mongodb.com/products/compass?_ga=2.242098183.484665306.1647521336-1145371503.1646484763 
 heruntergeladen werden.
 genauere Schritte der Instalation von MongoDB und Mongo Compass sind im folgenden Video erklärt: https://youtu.be/AMy4WY3_KQo
 Die bedienung von Mongo Compass sind im Video erklärt:  https://youtu.be/ydXCcLAi5aU
@@ -61,6 +63,10 @@ Für eine reibungslose Funktion der Seite muss diese Reihenfolge beachtet werden
 <img width="1159" alt="Bildschirmfoto 2022-03-28 um 22 16 55" src="https://user-images.githubusercontent.com/102029357/160480389-498ddac4-d605-44b7-bcec-b7b7824f86bf.png">
 
 Ebenfalls ist das von enorme Bedeutung, dass nach jeder Änderung im Backend die Datenbank verbunden werden muss.
+
+Weitere Informationen habe ich im Code sowohl als Kommentare als auch hilfreiche Links beigefügt.
+Da sind eventuelle Probleme und Fehlermeldungen mit den jeweiligen Lösungsansätzen hinterlegt.
+
 
 
 
