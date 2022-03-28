@@ -57,7 +57,6 @@ Ebenfalls ist das von enorme Bedeutung, dass nach jeder Änderung im Backend die
 
 
 
-<img width="638" alt="Bildschirmfoto 2022-03-28 um 22 08 56" src="https://user-images.githubusercontent.com/102029357/160478607-df752516-f6ad-4b61-811e-15cd48694e87.png">
 
 
 
