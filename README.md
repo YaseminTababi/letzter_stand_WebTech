@@ -5,7 +5,7 @@ Professoren sollen zukünftig somit einen besseren überblick haben, wie viele S
 schreiben wollen würden. Somit können Professoren auch ihre Ressourcen besser einteilen. Die Anmeldung an sich ist kein Antrag 
 sondern nur an sich eine unverbindliche Information für die Professoren.
 
-Die Webseite kann über localhost:XXX aufgerufen werden.
+Die Webseite kann über localhost:4200 aufgerufen werden.
 
 Wie ist meine Webseite aufgebaut?
 
@@ -22,6 +22,7 @@ Nun folgt das wichtige: Das anmelden einer Aschlussarbeit:
 Die Daten habe ich sowohl mit Eingabefeldern, DropDown, Auswahl-Feldern als auch mit Radio Auswahlmöglichkeiten implementiert. 
 Ebenfalls sind if else Abfragen auch vorhanden. Damit der Student auch keine Angaben vergisst, habe ich Pflichtfelder eingebunden.
 Klickt man auf den anmelde Button, erscheint der Eintrag unten in der Tabelle. 
+
 <img width="1224" alt="Bildschirmfoto 2022-03-28 um 22 25 29" src="https://user-images.githubusercontent.com/102029357/160481130-6988e1ea-03cc-420f-8628-b6e10458e0fd.png">
 
 
@@ -32,6 +33,7 @@ READ: Klickt man auf die Lupe, so öffnet sich ein Fenster mit dem Eintrag. Hier
 UPDATE: Nun kann es ja mal vor kommen, dass einige Daten falsch sind oder sich geändert haben. 
 Aber das bearbeiten der Daten ist mit Hilfe des Bearbeitungsbuttons kein Problem. 
 Einfach auf den Stift Symbol klicken und die Daten überarbeiten und dann updaten. 
+
 <img width="1035" alt="Bildschirmfoto 2022-03-28 um 22 29 29" src="https://user-images.githubusercontent.com/102029357/160481770-6f130e12-6726-46ff-ae70-6fb0116bf359.png">
 
 DELETE: Ein student hat sich entschieden, doch nicht seine Abschlussarbeit zu schreiben. 
@@ -39,27 +41,30 @@ Da wäre es sicherlich gut, den Studenten aus der Liste zu löschen. Dafür ist 
 Um den Studenten zu löschen einfach drauf klicken.
 
 Die Datenbank habe ich mit MongoDB erstellt. Für die Visualisierung der Datenbank (die Einträge, die in meiner Webseite eingetragen werden)
-habe ich mich für MongoCompas entschieden. Das Programm bietet die Möglichkeit, die Einträge, die in der Datenbank gespeichert werden sollten, 
+habe ich mich für MongoDB Compas entschieden. Das Programm bietet die Möglichkeit, die Einträge, die in der Datenbank gespeichert werden sollten, 
 mit den jeweiligen variablen, Visualisieren. Dies erleichterte mir die Fehlerfindung. Somit konnte ich eingrenzen, 
 ob der Fehler in der Datenbak war oder im Frontend.
 
-Das Programm Mongo Compass kann unter:
+Das Programm MongoDB Compass kann unter:
+
 https://www.mongodb.com/products/compass?_ga=2.242098183.484665306.1647521336-1145371503.1646484763 
 heruntergeladen werden.
-genauere Schritte der Instalation von MongoDB und Mongo Compass sind im folgenden Video erklärt: https://youtu.be/AMy4WY3_KQo
-Die bedienung von Mongo Compass sind im Video erklärt:  https://youtu.be/ydXCcLAi5aU
+genauere Schritte der Instalation von MongoDB und MongoDB Compass sind im folgenden Video erklärt: https://youtu.be/AMy4WY3_KQo
+Die bedienung von MongoDB Compass sind im Video erklärt:  https://youtu.be/ydXCcLAi5aU
 
 Meine Webseite an sich habe ich mit der IDE Visual Studio Code erstellt. 
 
 Nach dem öffnen vom Terminal in der IDE (VSC) kann mit dem Befehl "ng serve --open" die Seite gestartet werden. 
 Hier ist zu beachten, dass der Befehl in dem "frontend" Ordner ausgeführt werden muss. 
 Falls der Port bereits vergeben ist, kann die Seite mit dem Befehl "ng serve --open --port" ebenfalls gestartet werden.
+
 <img width="788" alt="Bildschirmfoto 2022-03-28 um 22 13 32" src="https://user-images.githubusercontent.com/102029357/160480377-26262aab-02bb-46eb-9e70-552dbb811934.png">
 
 
 Anschließend kann die Datenbank mit dem Befehl "node server.js" verbunden werden. 
 Hier ist ebefalls zu beachten, dass der Befehl im "server" Ordner ausgeführt werden muss. 
 Für eine reibungslose Funktion der Seite muss diese Reihenfolge beachtet werden. 
+
 <img width="1159" alt="Bildschirmfoto 2022-03-28 um 22 16 55" src="https://user-images.githubusercontent.com/102029357/160480389-498ddac4-d605-44b7-bcec-b7b7824f86bf.png">
 
 Ebenfalls ist das von enorme Bedeutung, dass nach jeder Änderung im Backend die Datenbank verbunden werden muss.
